@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>دیوان حافظ و کلیات سعدی | صدرا</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&family=Lalezar&display=swap" rel="stylesheet">
+</head>
+<body>
+<canvas id="st"></canvas>
+<div class="orb" style="width:320px;height:320px;background:#e8b84b;top:-80px;right:-80px"></div>
+<div class="orb" style="width:260px;height:260px;background:#4a6bff;bottom:10%;left:-90px"></div>
+<div id="ld"><div class="ring"></div><h1>حافظ و سعدی</h1><p>در حال گشودن گنجینه...</p></div>
+<header>
+<h1>دیوان حافظ و کلیات سعدی</h1>
+<p>فال حافظ + بوستان (سعدی‌نامه) + گلستان + غزلیات سعدی — همه با معنی دقیق</p><br>
+<span class="badge">نسخه سه‌بعدی ویژه</span>
+</header>
+<nav>
+<button class="on" onclick="go('fal',this)">فال حافظ</button>
+<button onclick="go('hz',this)">گنجینه حافظ</button>
+<button onclick="go('bo',this)">بوستان</button>
+<button onclick="go('go',this)">گلستان</button>
+<button onclick="go('gh',this)">غزلیات سعدی</button>
+</nav>
+<main>
+<section id="fal" class="on">
+<h2 class="st">فال حافظ سه‌بعدی</h2>
+<p class="sub">چشم ببند، دلت را صاف کن و دکمه را بزن</p>
+<div class="card">
+<div id="book3d"><div id="bk"><div class="face front"><div style="font-size:56px">📖</div><div>دیوان حافظ</div><div style="font-size:13px;font-family:Vazirmatn">تصحیح قزوینی ـ غنی</div></div><div class="face sideB"></div><div class="spineL"></div><div class="pagesR"></div></div></div>
+<div style="text-align:center"><button class="btn" onclick="takeFal()">گرفتن فال</button><div id="daily" style="margin-top:12px;font-size:14px;opacity:.85"></div></div>
+<div id="falOut" style="margin-top:16px"></div>
+</div>
+</section>
+<section id="hz">
+<h2 class="st">گنجینه حافظ</h2>
+<p class="sub">متن دقیق + معنی بیت‌به‌بیت + تفسیر فال</p>
+<div class="card"><input class="sr" id="q" oninput="grid()" placeholder="جست‌وجو... مثلا: شیرازی، ساقی"></div>
+<div class="grid" id="grid"></div>
+<div id="hzOut" style="margin-top:16px"></div>
+</section>
+<section id="bo">
+<h2 class="st">بوستان سعدی — سعدی‌نامه</h2>
+<p class="sub">منظومه کامل سعدی در ۱۰ باب با معنی دقیق، نستعلیق و کاغذ کاهی</p>
+<div class="kahi" id="kahiBox">
+<div class="s-controls dark2"><button class="on" id="bNb" onclick="setF('n')">نستعلیق</button><button id="bVb" onclick="setF('v')">وزیرمتن</button><button class="on" id="bMb" onclick="tglM()">معنی: روشن</button></div>
+<div class="s-controls dark2" id="babBtns"></div>
+<div style="text-align:center;margin-bottom:8px"><span class="chip" id="bTitle"></span></div>
+<div id="bBody"></div>
+<div class="pg"><button onclick="bPrev()">قبلی</button><span class="chip" id="bNum"></span><button onclick="bNext()">بعدی</button></div>
+<div style="text-align:center;font-family:Vazirmatn;font-size:13px;opacity:.8">۱۰ باب: عدل ـ احسان ـ عشق ـ تواضع ـ رضا ـ ذکر ـ تربیت ـ شکر ـ توبه ـ مناجات + دیباچه</div>
+</div>
+</section>
+<section id="go">
+<h2 class="st">گلستان سعدی</h2>
+<p class="sub">هر ۸ باب گلستان با حکایت‌های مشهور و معنی دقیق</p>
+<div class="card"><div class="s-controls" id="golBtns"></div><input class="sr" id="qg" oninput="golGrid()" placeholder="جست‌وجو در گلستان..."></div>
+<div class="grid" id="golGrid"></div>
+<div id="golOut" style="margin-top:14px"></div>
+</section>
+<section id="gh">
+<h2 class="st">غزلیات سعدی با معنی دقیق</h2>
+<p class="sub">عاشقانه‌های شیخ اجل</p>
+<div class="grid" id="sgGrid"></div>
+<div id="sgOut" style="margin-top:14px"></div>
+</section>
+</main>
+<footer>ساخته شده توسط <b>صدرا</b><br><span style="font-size:13px;opacity:.7">متن‌ها مقابله‌شده با تصحیح قزوینی ـ غنی و فروغی</span></footer>
+<div id="fx"></div>
+<div id="toast"></div>
+<script>
+(function(){function h(){var l=document.getElementById("ld");if(l){l.classList.add("hide");setTimeout(function(){if(l.parentNode)l.parentNode.removeChild(l)},700)}}window.addEventListener("load",function(){setTimeout(h,600)});setTimeout(h,2800);})();
+</script>
+<script src="script.js"></script>
+</body>
+</html>
