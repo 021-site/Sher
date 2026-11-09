@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>دیوان حافظ و کلیات سعدی | صدرا</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&family=Lalezar&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Vazirmatn,Tahoma;background:#060913;color:#f3ead3;overflow-x:hidden}
+canvas#st{position:fixed;inset:0;z-index:0;pointer-events:none}
+.orb{position:fixed;border-radius:50%;filter:blur(70px);opacity:.32;z-index:0;pointer-events:none}
+#ld{position:fixed;inset:0;background:radial-gradient(circle at 50% 30%,#101a35,#060913);z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;transition:opacity .6s;animation:ldAuto 1s ease 5s forwards}
+#ld.hide{opacity:0;pointer-events:none;visibility:hidden}
+@keyframes ldAuto{to{opacity:0;visibility:hidden;pointer-events:none}}
+#ld h1{font-family:Lalezar;font-size:64px;background:linear-gradient(180deg,#fff6d8,#e8b84b,#9a6b1e);-webkit-background-clip:text;background-clip:text;color:transparent}
+#ld .ring{width:64px;height:64px;border-radius:50%;border:3px solid #e8b84b33;border-top:3px solid #e8b84b;animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+header{position:relative;z-index:2;text-align:center;padding:32px 16px 10px}
+header h1{font-family:Lalezar;font-size:clamp(30px,6vw,56px);background:linear-gradient(180deg,#fff8dc,#e8b84b 55%,#9a6b1e);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 18px 40px #000}
+header p{opacity:.85;margin-top:8px;font-size:14px}
+.badge{display:inline-block;margin-top:12px;border:1px solid #e8b84b66;padding:7px 18px;border-radius:999px;font-size:13px;background:#e8b84b14}
+nav{position:sticky;top:0;z-index:5;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:12px;background:#070b16ee;backdrop-filter:blur(12px);border-bottom:1px solid #e8b84b33}
+nav button{font-family:Vazirmatn;border:1px solid #e8b84b55;background:linear-gradient(180deg,#1a2440,#0f172e);color:#f3d9a0;padding:11px 20px;border-radius:14px;cursor:pointer;font-size:14px;box-shadow:0 5px 0 #000,0 10px 25px #000a;transition:.18s}
+nav button.on{background:linear-gradient(180deg,#ffe9a8,#e8b84b 55%,#a86f14);color:#241700;font-weight:800;transform:translateY(2px)}
+main{position:relative;z-index:2;max-width:1040px;margin:0 auto;padding:18px 14px 70px}
+section{display:none}
+section.on{display:block;animation:up .5s}
+@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1}}
+h2.st{font-family:Lalezar;color:#e8b84b;font-size:32px;text-align:center;margin:18px 0 6px;text-shadow:0 10px 30px #000}
+p.sub{text-align:center;opacity:.7;margin-bottom:14px;font-size:14px}
+.card{background:linear-gradient(180deg,#16203a,#0c1326);border:1px solid #e8b84b44;border-radius:22px;padding:22px;box-shadow:0 20px 50px #000c,inset 0 1px 0 #ffffff18}
+.btn{background:linear-gradient(180deg,#fff0bd,#e8b84b 55%,#a86f14);border:none;color:#241700;font-weight:900;font-family:Vazirmatn;padding:15px 42px;border-radius:999px;font-size:18px;cursor:pointer;box-shadow:0 7px 0 #6a420c,0 16px 40px #e8b84b66;transition:.15s}
+.btn:active{transform:translateY(5px);box-shadow:0 1px 0 #6a420c}
+.btn2{border:1px solid #e8b84b66;background:#0e162c;color:#f3d9a0;padding:10px 20px;border-radius:12px;cursor:pointer;font-family:Vazirmatn;font-size:13px;box-shadow:0 4px 0 #000}
+.beyt{display:flex;justify-content:space-between;gap:14px;padding:11px 6px;border-bottom:1px dashed #e8b84b2e;font-family:Amiri,serif;font-size:21px;line-height:2}
+.beyt span{flex:1}
+.beyt span:last-child{text-align:left}
+.mean{background:#e8b84b14;border-right:3px solid #e8b84b;padding:11px 13px;border-radius:12px;margin:8px 0;font-size:14.5px;line-height:1.95}
+.tabs{display:flex;gap:8px;margin:14px 0;flex-wrap:wrap}
+.tabs button{flex:1;min-width:120px;padding:11px;border-radius:14px;border:1px solid #e8b84b44;background:#0e162c;color:#f3d9a0;font-family:Vazirmatn;cursor:pointer}
+.tabs button.on{background:#e8b84b;color:#1a1200;font-weight:800}
+#book3d{perspective:1400px;display:flex;justify-content:center;margin:18px 0 10px}
+#bk{width:230px;height:310px;position:relative;transform-style:preserve-3d;transition:1s;transform:rotateY(12deg)}
+#bk.open{transform:rotateY(-20deg) scale(1.05)}
+.face{position:absolute;inset:0;border-radius:8px 20px 20px 8px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px}
+.front{background:linear-gradient(135deg,#1a1200,#5b3f0e 35%,#f3d27a 50%,#5b3f0e 65%,#0f0a00);border:2px solid #e8b84b;color:#ffe9a8;font-family:Lalezar;font-size:34px;transform:translateZ(30px);box-shadow:0 25px 60px #000}
+.sideB{background:#0b0f1e;border:2px solid #e8b84b55;transform:translateZ(-30px)}
+.spineL{position:absolute;top:0;bottom:0;left:-30px;width:60px;background:linear-gradient(90deg,#3a2406,#9a6b1e,#3a2406);transform:rotateY(90deg)}
+.pagesR{position:absolute;top:6px;bottom:6px;right:-28px;width:56px;background:repeating-linear-gradient(90deg,#f7e8bd 0 3px,#c9a86a 3px 4px);transform:rotateY(90deg)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:12px}
+.it{background:linear-gradient(180deg,#16203a,#0e162c);border:1px solid #e8b84b33;padding:15px;border-radius:16px;cursor:pointer;font-family:Amiri;font-size:18px;box-shadow:0 8px 20px #0009;transition:.2s}
+.it:hover{border-color:#e8b84b;transform:translateY(-6px)}
+.it small{display:block;font-family:Vazirmatn;font-size:12px;opacity:.7;margin-top:6px}
+input.sr{width:100%;padding:13px 16px;border-radius:14px;border:1px solid #e8b84b44;background:#0c1328;color:#fff;font-family:Vazirmatn;margin-top:10px}
+.kahi{background:radial-gradient(ellipse at 30% 15%,#fbeec8,#ecd096 50%,#d0a75f 100%);color:#3a2708;border-radius:12px;padding:26px 20px;box-shadow:inset 0 0 80px #8a5f1e55,0 25px 60px #000c;position:relative;border:1px solid #8a5f1e88;transition:.35s}
+.kahi:before{content:"";position:absolute;inset:11px;border:2px solid #7a521a55;border-radius:7px;pointer-events:none}
+.kahi.flip{transform:rotateY(80deg);opacity:0}
+.nast{font-family:"Noto Nastaliq Urdu",Amiri,serif;line-height:3;font-size:20px}
+.vaz{font-family:Vazirmatn;line-height:2}
+.s-controls{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:12px 0}
+.s-controls button{border:1px solid #e8b84b55;background:#0e162c;color:#f3d9a0;padding:9px 16px;border-radius:999px;font-family:Vazirmatn;cursor:pointer;font-size:13px}
+.s-controls button.on{background:#e8b84b;color:#1a1200;font-weight:800}
+.s-controls.dark2 button{border-color:#3a2708;color:#3a2708;background:transparent}
+.s-controls.dark2 button.on{background:#3a2708;color:#f7e8bd}
+.pg{display:flex;justify-content:space-between;align-items:center;margin:14px 0;gap:8px}
+.pg button{border:1px solid #3a2708;background:#3a2708;color:#f7e8bd;padding:11px 22px;border-radius:999px;cursor:pointer;font-family:Vazirmatn}
+.chip{background:#3a2708;color:#f3d9a0;padding:7px 15px;border-radius:999px;font-size:13px}
+footer{text-align:center;padding:30px;position:relative;z-index:2;border-top:1px solid #e8b84b33;margin-top:22px}
+footer b{color:#e8b84b;font-family:Lalezar;font-size:26px}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:60}
+.fp{position:absolute;top:-20px;width:9px;height:14px;border-radius:2px}
+#toast{position:fixed;bottom:24px;right:50%;transform:translateX(50%);background:#1a1200;border:1px solid #e8b84b;color:#ffe9a8;padding:12px 24px;border-radius:999px;z-index:200;font-size:14px;box-shadow:0 10px 30px #000;opacity:0;transition:.3s;pointer-events:none;white-space:nowrap}
+@media(max-width:600px){.beyt{font-size:18px;flex-direction:column;gap:2px}.beyt span:last-child{text-align:right}.nast{font-size:18px}}
+</style>
+</head>
+<body>
+<canvas id="st"></canvas>
+<div class="orb" style="width:320px;height:320px;background:#e8b84b;top:-80px;right:-80px"></div>
+<div class="orb" style="width:260px;height:260px;background:#4a6bff;bottom:10%;left:-90px"></div>
+<div id="ld"><div class="ring"></div><h1>حافظ و سعدی</h1><p>در حال گشودن گنجینه...</p></div>
+<script>
+(function(){function h(){var l=document.getElementById("ld");if(l){l.classList.add("hide");setTimeout(function(){if(l.parentNode)l.parentNode.removeChild(l)},700)}}window.addEventListener("load",function(){setTimeout(h,600)});setTimeout(h,2800);})();
+</script>
+<header>
+<h1>دیوان حافظ و کلیات سعدی</h1>
+<p>فال حافظ + بوستان (سعدی‌نامه) + گلستان + غزلیات سعدی — همه با معنی دقیق</p><br>
+<span class="badge">نسخه سه‌بعدی ویژه</span>
+</header>
+<nav>
+<button class="on" onclick="go('fal',this)">فال حافظ</button>
+<button onclick="go('hz',this)">گنجینه حافظ</button>
+<button onclick="go('bo',this)">بوستان</button>
+<button onclick="go('go',this)">گلستان</button>
+<button onclick="go('gh',this)">غزلیات سعدی</button>
+</nav>
+<main>
+<section id="fal" class="on">
+<h2 class="st">فال حافظ سه‌بعدی</h2>
+<p class="sub">چشم ببند، دلت را صاف کن و دکمه را بزن</p>
+<div class="card">
+<div id="book3d"><div id="bk"><div class="face front"><div style="font-size:56px">📖</div><div>دیوان حافظ</div><div style="font-size:13px;font-family:Vazirmatn">تصحیح قزوینی ـ غنی</div></div><div class="face sideB"></div><div class="spineL"></div><div class="pagesR"></div></div></div>
+<div style="text-align:center"><button class="btn" onclick="takeFal()">گرفتن فال</button><div id="daily" style="margin-top:12px;font-size:14px;opacity:.85"></div></div>
+<div id="falOut" style="margin-top:16px"></div>
+</div>
+</section>
+<section id="hz">
+<h2 class="st">گنجینه حافظ</h2>
+<p class="sub">متن دقیق + معنی بیت‌به‌بیت + تفسیر فال</p>
+<div class="card"><input class="sr" id="q" oninput="grid()" placeholder="جست‌وجو... مثلا: شیرازی، ساقی"></div>
+<div class="grid" id="grid"></div>
+<div id="hzOut" style="margin-top:16px"></div>
+</section>
+<section id="bo">
+<h2 class="st">بوستان سعدی — سعدی‌نامه</h2>
+<p class="sub">منظومه کامل سعدی در ۱۰ باب با معنی دقیق، نستعلیق و کاغذ کاهی</p>
+<div class="kahi" id="kahiBox">
+<div class="s-controls dark2"><button class="on" id="bNb" onclick="setF('n')">نستعلیق</button><button id="bVb" onclick="setF('v')">وزیرمتن</button><button class="on" id="bMb" onclick="tglM()">معنی: روشن</button></div>
+<div class="s-controls dark2" id="babBtns"></div>
+<div style="text-align:center;margin-bottom:8px"><span class="chip" id="bTitle"></span></div>
+<div id="bBody"></div>
+<div class="pg"><button onclick="bPrev()">قبلی</button><span class="chip" id="bNum"></span><button onclick="bNext()">بعدی</button></div>
+<div style="text-align:center;font-family:Vazirmatn;font-size:13px;opacity:.8">۱۰ باب: عدل ـ احسان ـ عشق ـ تواضع ـ رضا ـ ذکر ـ تربیت ـ شکر ـ توبه ـ مناجات + دیباچه</div>
+</div>
+</section>
+<section id="go">
+<h2 class="st">گلستان سعدی</h2>
+<p class="sub">هر ۸ باب گلستان با حکایت‌های مشهور و معنی دقیق</p>
+<div class="card"><div class="s-controls" id="golBtns"></div><input class="sr" id="qg" oninput="golGrid()" placeholder="جست‌وجو در گلستان..."></div>
+<div class="grid" id="golGrid"></div>
+<div id="golOut" style="margin-top:14px"></div>
+</section>
+<section id="gh">
+<h2 class="st">غزلیات سعدی با معنی دقیق</h2>
+<p class="sub">عاشقانه‌های شیخ اجل</p>
+<div class="grid" id="sgGrid"></div>
+<div id="sgOut" style="margin-top:14px"></div>
+</section>
+</main>
+<footer>ساخته شده توسط <b>صدرا</b><br><span style="font-size:13px;opacity:.7">متن‌ها مقابله‌شده با تصحیح قزوینی ـ غنی و فروغی</span></footer>
+<div id="fx"></div>
+<div id="toast"></div>
+<script>
+var H=[
+{id:1,t:"الا یا ایها الساقی ادر کاسا و ناولها",q:"لها",v:[["الا یا ایها الساقی ادر کاسا و ناولها","که عشق آسان نمود اول ولی افتاد مشکل‌ها"],["به بوی نافه‌ای کاخر صبا زان طره بگشاید","ز تاب جعد مشکینش چه خون افتاد در دل‌ها"],["به می سجاده رنگین کن گرت پیر مغان گوید","که سالک بی‌خبر نبود ز راه و رسم منزل‌ها"],["شب تاریک و بیم موج و گردابی چنین هایل","کجا دانند حال ما سبکباران ساحل‌ها"]],m:["ای ساقی جام بده و بچرخان، عشق اول آسان بود ولی سخت شد","از بوی زلف یار آشوبی در دل‌ها افتاد","اگر پیر راه گفت اطاعت کن که او راه را می‌داند","سبکباران ساحل حال غریقان را نمی‌فهمند"],f:"بشارت نزدیک است. به راهنمای دانا اعتماد کن.",p:"صبور باش و رازت را فاش نکن."},
+{id:3,t:"اگر آن ترک شیرازی به دست آرد دل ما را",q:"ما را",v:[["اگر آن ترک شیرازی به دست آرد دل ما را","به خال هندویش بخشم سمرقند و بخارا را"],["بده ساقی می باقی که در جنت نخواهی یافت","کنار آب رکن آباد و گلگشت مصلا را"],["نصیحت گوش کن جانا که از جان دوست‌تر دارند","جوانان سعادتمند پند پیر دانا را"],["غزل گفتی و در سفتی بیا و خوش بخوان حافظ","که بر نظم تو افشاند فلک عقد ثریا را"]],m:["اگر زیباروی شیرازی دل ببرد به خالش سمرقند و بخارا می‌بخشم","در بهشت هم کنار رکن‌آباد پیدا نمی‌شود","جوانان خوشبخت پند پیر دانا را از جان بیشتر دوست دارند","فلک بر نظم تو عقد ثریا می‌افشاند"],f:"فال بسیار مبارک است. به مراد می‌رسی.",p:"مغرور نشو و نصیحت بپذیر."},
+{id:184,t:"دوش دیدم که ملائک در میخانه زدند",q:"زدند",v:[["دوش دیدم که ملائک در میخانه زدند","گل آدم بسرشتند و به پیمانه زدند"],["آسمان بار امانت نتوانست کشید","قرعه کار به نام من دیوانه زدند"],["شکر ایزد که میان من و او صلح افتاد","صوفیان رقص‌کنان ساغر شکرانه زدند"]],m:["فرشتگان گل آدم را سرشتند و به پیمانه ریختند","آسمان امانت عشق را نتوانست کشید و قرعه به نام من افتاد","خدا را شکر میان من و یار صلح شد"],f:"صلح و گشایش در راه است.",p:"اختلاف را رها کن و شکرگزار باش."},
+{id:177,t:"دوش وقت سحر از غصه نجاتم دادند",q:"دادند",v:[["دوش وقت سحر از غصه نجاتم دادند","واندر آن ظلمت شب آب حیاتم دادند"],["چه مبارک سحری بود و چه فرخنده شبی","آن شب قدر که این تازه براتم دادند"],["همت حافظ و انفاس سحرخیزان بود","که ز بند غم ایام نجاتم دادند"]],m:["سحرگاه از غصه نجاتم دادند و آب حیات دادند","چه شب قدری بود که برات آزادی دادند","به دعای سحرخیزان از بند غم رستم"],f:"نجات قطعی از غم نزدیک است.",p:"ناامید مشو و دعا کن."},
+{id:179,t:"رسیده مژده که ایام غم نخواهد ماند",q:"ماند",v:[["رسیده مژده که ایام غم نخواهد ماند","چنان نماند چنین نیز هم نخواهد ماند"],["سرود مجلس جمشید گفته‌اند این بود","که جام باده بیاور که جم نخواهد ماند"],["غنیمتی شمر ای شمع وصل پروانه","که این معامله تا صبحدم نخواهد ماند"]],m:["مژده رسید که غم نمی‌ماند","سرود مجلس جمشید این بود که جم نمی‌ماند","ای شمع وصل پروانه را غنیمت شمر"],f:"غم می‌رود. فرصت را غنیمت بدان.",p:"فرصت وصل را از دست نده."},
+{id:143,t:"روز هجران و شب فرقت یار آخر شد",q:"شد",v:[["روز هجران و شب فرقت یار آخر شد","زدم این فال و گذشت اختر و کار آخر شد"],["آن همه ناز و تنعم که خزان می‌فرمود","عاقبت در قدم باد بهار آخر شد"],["صبح امید که بد معتکف پرده غیب","گو برون آی که کار شب تار آخر شد"]],m:["روز دوری تمام شد و بخت برگشت","ناز خزان در برابر باد بهار تمام شد","ای صبح امید بیرون آی که شب تار تمام شد"],f:"هجران تمام و وصال نزدیک است.",p:"شکر کن و جشن بگیر."},
+{id:22,t:"صبا به لطف بگو آن غزال رعنا را",q:"رعنا را",v:[["صبا به لطف بگو آن غزال رعنا را","که سر به کوه و بیابان تو داده‌ای ما را"],["به خلق و لطف توان کرد صید اهل نظر","به بند و دام نگیرند مرغ دانا را"]],m:["ای باد صبا به آن زیبا بگو ما را آواره کرده‌ای","با اخلاق خوش می‌توان دل برد، مرغ دانا را با دام نمی‌گیرند"],f:"واسطه و پیام گره را باز می‌کند.",p:"با نرمی سخن بگو."},
+{id:101,t:"نفس باد صبا مشک‌فشان خواهد شد",q:"خواهد شد",v:[["نفس باد صبا مشک‌فشان خواهد شد","عالم پیر دگر باره جوان خواهد شد"],["ای دل ار عشرت امروز به فردا فکنی","مایه نقد بقا را که ضمان خواهد شد"]],m:["باد بهاری مشک‌افشان می‌شود و جهان پیر جوان می‌شود","خوشی امروز را به فردا میفکن"],f:"بهار و گشایش نزدیک است.",p:"امروز را دریاب."},
+{id:200,t:"دانی که چنگ و عود چه تقریر می‌کنند",q:"می‌کنند",v:[["دانی که چنگ و عود چه تقریر می‌کنند","پنهان خورید باده که تعزیر می‌کنند"],["گویند رمز عشق مگویید و مشنوید","مشکل حکایتیست که تقریر می‌کنند"]],m:["سازها می‌گویند پنهان باده بنوش که مجازات می‌کنند","می‌گویند راز عشق را مگویید"],f:"احتیاط کن و رازت را پنهان دار.",p:"هوشیار باش."},
+{id:318,t:"ما ز یاران چشم یاری داشتیم",q:"داشتیم",v:[["ما ز یاران چشم یاری داشتیم","خود غلط بود آنچه می‌پنداشتیم"],["شیوه چشمت فریب جنگ داشت","ما غلط کردیم و صلح انگاشتیم"]],m:["از دوستان انتظار یاری داشتیم ولی اشتباه بود","ناز چشم تو جنگ بود و ما صلح پنداشتیم"],f:"تکیه بر خودت کن.",p:"انتظارت را کم کن."}
+];
+var BO=[
+{bab:"دیباچه",t:"به نام خداوند جان‌آفرین",x:["به نام خداوند جان آفرین","حکیم سخن در زبان آفرین","خداوند بخشنده دست‌گیر","کریم خطابخش پوزش‌پذیر"],m:"به نام خداوند آفریننده جان و حکمت. بخشنده دستگیر و پذیرنده عذر. آغاز بوستان با توحید است."},
+{bab:"باب اول: عدل",t:"حکایت نوشیروان عادل",x:["شنیدم که نوشیروان دادگر","به گرمابه‌ای دید مویی به سر","بگریست و گفت ای دریغ ای افسوس","که مویی پریشان در این ملک ماست"],m:"نوشیروان به کوچک‌ترین بی‌نظمی حساس بود. پیام: عدل از توجه به جزئیات شروع می‌شود."},
+{bab:"باب اول: عدل",t:"عدل شاه و رعیت",x:["رعیت چو بیخ‌اند و سلطان درخت","درخت ای پسر باشد از بیخ سخت","مکن تا توانی دل خلق ریش","وگر می‌کنی می‌کنی بیخ خویش"],m:"رعیت ریشه و شاه درخت است. دل مردم را مرنجان وگرنه ریشه خودت را می‌کنی."},
+{bab:"باب دوم: احسان",t:"حکایت حاتم طایی",x:["شنیدم که حاتم به راهی گذشت","به مهمانیش برد و اسبش بکشت","که نانش نبود و جز اسبش نداشت"],m:"حاتم بهترین دارایی‌اش را برای مهمان داد. نهایت جوانمردی همین است."},
+{bab:"باب دوم: احسان",t:"دست افتاده گیر",x:["کسی نیک بیند به هر دو سرای","که نیکی رساند به خلق خدای","ره نیک‌مردان آزاده گیر","چو استاده‌ای دست افتاده گیر"],m:"هر که به خلق نیکی کند در دو جهان نیکی می‌بیند. دست افتاده را بگیر."},
+{bab:"باب سوم: عشق",t:"لیلی و مجنون",x:["شنیدم که مجنون ز راهی گذشت","بگفت ای سگان کوی لیلی سلام","ببوسید خاک آستان شما"],m:"مجنون خاک کوی لیلی را بوسید. عاشق همه وابستگان معشوق را دوست دارد."},
+{bab:"باب سوم: عشق",t:"عشق حقیقی",x:["عشق آنست کز جان برآید خروش","نه آن کز دهان آید و از گوش"],m:"عشق واقعی از جان می‌جوشد نه حرف زبان."},
+{bab:"باب چهارم: تواضع",t:"افتادگی آموز",x:["افتادگی آموز اگر طالب فیضی","هرگز نخورد آب زمینی که بلند است"],m:"اگر فیض می‌خواهی افتاده باش. زمین بلند آب نمی‌خورد."},
+{bab:"باب پنجم: رضا",t:"قناعت",x:["قناعت توانگر کند مرد را","خبر کن حریص جهانگرد را"],m:"قناعت توانگری می‌آورد. ثروت واقعی بی‌نیازی است."},
+{bab:"باب ششم: ذکر",t:"یاد خدا",x:["به یاد خدای آفریننده باش","که یارت بود چون نماند هیچ‌کاش"],m:"به یاد خدا باش که وقتی هیچ‌کس نماند او یارت است."},
+{bab:"باب هفتم: تربیت",t:"تربیت فرزند",x:["پسر را پدر گر کند تربیت","به دولت رسد در زمان مشیت"],m:"تربیت سرنوشت‌ساز است."},
+{bab:"باب هشتم: شکر",t:"شکر نعمت",x:["شکر نعمت نعمتت افزون کند","کفر نعمت از کفت بیرون کند"],m:"شکر نعمت را زیاد و ناسپاسی آن را کم می‌کند."},
+{bab:"باب نهم: توبه",t:"بازآ بازآ",x:["بازآ بازآ هر آنچه هستی بازآ","این درگه ما درگه نومیدی نیست","صد بار اگر توبه شکستی بازآ"],m:"در رحمت همیشه باز است. صد بار هم شکستی باز برگرد."},
+{bab:"باب دهم: مناجات",t:"مناجات سعدی",x:["الهی به عزت که خوارم مکن","به ذلت مبر آبرویم مکن","الهی به فضلت امیدم تویی"],m:"خدایا خوارم مکن. امیدم به فضل توست."}
+];
+var GO=[
+{c:"باب اول",t:"بنی آدم اعضای یک پیکرند",x:"بنی آدم اعضای یک پیکرند که در آفرینش ز یک گوهرند — چو عضوی به درد آورد روزگار دگر عضوها را نماند قرار — تو کز محنت دیگران بی‌غمی نشاید که نامت نهند آدمی",m:"انسان‌ها اعضای یک بدن‌اند. بی‌غم از رنج دیگران لایق نام آدم نیست."},
+{c:"باب اول",t:"دروغ مصلحت‌آمیز",x:"پادشاهی به کشتن اسیری اشارت کرد. وزیر نیک‌خواه دشنام اسیر را به آیه بخشش ترجمه کرد و شاه بخشیدش. سعدی: دروغ مصلحت‌آمیز به که راست فتنه‌انگیز.",m:"دروغی که جان نجات دهد بهتر از راستی که فتنه کند."},
+{c:"باب دوم",t:"منت خدای را",x:"منت خدای را عز و جل که طاعتش موجب قربت است و به شکر اندرش مزید نعمت. هر نفسی که فرو می‌رود ممد حیات است و چون برمی‌آید مفرح ذات.",m:"هر نفس دو نعمت دارد و هر نعمت شکری می‌خواهد."},
+{c:"باب سوم",t:"قناعت توانگری است",x:"قناعت سرافرازد ای مرد هوش. درویش قانع پادشاه است و شاه حریص گدا.",m:"قناعت سر را بلند و طمع آن را خم می‌کند."},
+{c:"باب چهارم",t:"زبان سرخ سر سبز می‌دهد بر باد",x:"زبان درکش ای مرد بسیار دان. کم‌گوی و گزیده‌گوی چون در.",m:"سکوت حکمت است. کم بگو و گزیده بگو."},
+{c:"باب پنجم",t:"حسن و عشق",x:"هر که دلارام دید و دلش نشد اسیر سنگ است. عشق شور در سر دارد.",m:"عاشق ملامت‌کش است ولی پشیمان نیست."},
+{c:"باب ششم",t:"ضعف پیری",x:"پیری رسید و جوانی برفت. ای که پنجاه رفت و در خوابی مگر این پنج روز دریابی.",m:"این چند روز باقی را دریاب."},
+{c:"باب هفتم",t:"هم‌نشین",x:"پسر نوح با بدان بنشست خاندان نبوتش گم شد. سگ اصحاب کهف نیکان گرفت مردم شد.",m:"با که می‌نشینی مهم‌تر از که هستی است."},
+{c:"باب هشتم",t:"آداب هم‌نشینی",x:"با فرومایه مشورت مکن. رازت را به هرکس مگو. در مجلس بزرگان کم بگو.",m:"با نادان مجادله مکن و سنجیده سخن بگو."}
+];
+var SG=[
+{t:"ای ساربان آهسته رو کآرام جانم می‌رود",v:[["ای ساربان آهسته رو کآرام جانم می‌رود","وان دل که با خود داشتم با دلستانم می‌رود"],["محمل بدار ای ساروان تندی مکن با کاروان","کز عشق آن سرو روان گویی روانم می‌رود"],["بازآی و بر چشمم نشین ای دلستان نازنین","کآشوب و فریاد از زمین بر آسمانم می‌رود"]],m:"سعدی به کاروان می‌گوید آرام برو که جانم با او می‌رود. شکایت هجران و التماس وصال."},
+{t:"من ندانستم از اول که تو بی‌مهر و وفایی",v:[["من ندانستم از اول که تو بی‌مهر و وفایی","عهد نابستن از آن به که ببندی و نپایی"]],m:"عهد نبستن بهتر از بستن و وفا نکردن است. گلایه از بی‌وفایی."},
+{t:"هرگز وجود حاضر غایب شنیده‌ای",v:[["هرگز وجود حاضر غایب شنیده‌ای","من در میان جمع و دلم جای دیگر است"]],m:"من در میان مردمم ولی دلم جای دیگر است."}
+];
+var cur=0,showM=true,nast=true,last=null,recent=[];
+var FOOT="\n\n✨ برگرفته از گنجینه حافظ و سعدی ✨";
+function showToast(m){var t=document.getElementById("toast");t.textContent=m;t.style.opacity="1";clearTimeout(window._tt);window._tt=setTimeout(function(){t.style.opacity="0"},2200)}
+function robustCopy(text){
+function ok(){showToast("کپی شد ✅")}
+function fallback(){
+try{
+var ta=document.createElement("textarea");ta.value=text;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.top="0";ta.style.left="0";ta.style.width="2em";ta.style.height="2em";ta.style.opacity="0";document.body.appendChild(ta);ta.focus();ta.select();try{ta.setSelectionRange(0,ta.value.length)}catch(e){}var done=false;try{done=document.execCommand("copy")}catch(e){done=false}document.body.removeChild(ta);if(done){ok()}else{manualBox(text)}
+}catch(e){manualBox(text)}
+}
+function manualBox(t){
+var m=document.createElement("div");m.style.cssText="position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:300;display:flex;align-items:center;justify-content:center;padding:20px";
+m.innerHTML="<div style='background:#fff;color:#111;padding:18px;border-radius:14px;max-width:92%;width:420px;font-family:Vazirmatn'><p style='font-size:14px;margin-bottom:10px'>کپی خودکار نشد، انگشتت را روی متن نگه دار و کپی را بزن:</p><textarea readonly style='width:100%;height:160px;font-family:Vazirmatn;font-size:14px;padding:10px;border-radius:10px'></textarea><div style='text-align:left;margin-top:10px'><button style='padding:10px 22px;border-radius:10px;border:none;background:#111;color:#fff;font-family:Vazirmatn'>بستن</button></div></div>";
+document.body.appendChild(m);var ta=m.querySelector("textarea");ta.value=t;ta.focus();ta.select();var b=m.querySelector("button");b.onclick=function(){document.body.removeChild(m)};m.onclick=function(e){if(e.target===m)document.body.removeChild(m)}
+}
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(ok).catch(function(){fallback()})}else{fallback()}
+}
+function go(id,el){var secs=document.querySelectorAll("section");for(var i=0;i<secs.length;i++)secs[i].classList.remove("on");document.getElementById(id).classList.add("on");var btns=document.querySelectorAll("nav button");for(var j=0;j<btns.length;j++)btns[j].classList.remove("on");el.classList.add("on");window.scrollTo({top:0,behavior:"smooth"})}
+var cvs=document.getElementById("st"),ctx=cvs.getContext("2d"),stars=[];
+function rs(){cvs.width=window.innerWidth;cvs.height=window.innerHeight}
+rs();window.addEventListener("resize",rs);
+for(var si=0;si<120;si++)stars.push({x:Math.random()*window.innerWidth,y:Math.random()*window.innerHeight,r:Math.random()*1.6+.3,s:Math.random()*.5+.1});
+(function an(){ctx.clearRect(0,0,cvs.width,cvs.height);for(var k=0;k<stars.length;k++){var p=stars[k];p.y+=p.s;if(p.y>window.innerHeight)p.y=0;ctx.globalAlpha=.4+Math.random()*.5;ctx.fillStyle="#e8b84b";ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fill()}requestAnimationFrame(an)})();
+function beyts(v){var h="";for(var i=0;i<v.length;i++)h+='<div class="beyt"><span>'+v[i][0]+'</span><span>'+v[i][1]+'</span></div>';return h}
+function means(m){var h="";for(var i=0;i<m.length;i++)h+='<div class="mean">'+m[i]+'</div>';return h}
+function falHTML(g,idx){return '<h3 style="font-family:Lalezar;color:#e8b84b;text-align:center;font-size:26px">'+g.t+'</h3><div class="tabs"><button class="on" onclick="tb(this,0)">متن</button><button onclick="tb(this,1)">معنی دقیق</button><button onclick="tb(this,2)">تفسیر</button></div><div id="t0">'+beyts(g.v)+'</div><div id="t1" style="display:none">'+means(g.m)+'</div><div id="t2" style="display:none"><div class="mean" style="border-color:#4ade80;font-size:16px">'+g.f+'</div><div class="mean">پیام حافظ: '+g.p+'</div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><button class="btn2" onclick="copyG()">کپی غزل</button><button class="btn2" onclick="window.print()">چاپ</button></div></div>'}
+function tb(b,i){var bs=b.parentElement.querySelectorAll("button");for(var k=0;k<bs.length;k++)bs[k].classList.remove("on");b.classList.add("on");for(var j=0;j<3;j++)document.getElementById("t"+j).style.display=(j==i?"block":"none")}
+function takeFal(){var a=[];for(var i=0;i<H.length;i++)if(recent.indexOf(H[i].id)<0)a.push(H[i]);if(!a.length){recent=[];a=H.slice()}var g=a[Math.floor(Math.random()*a.length)];recent.push(g.id);if(recent.length>8)recent.shift();last=g;var bk=document.getElementById("bk");bk.classList.remove("open");void bk.offsetWidth;bk.classList.add("open");setTimeout(function(){document.getElementById("falOut").innerHTML='<div class="card">'+falHTML(g)+'</div>';document.getElementById("falOut").scrollIntoView({behavior:"smooth"})},600);confetti()}
+function copyG(){if(!last)return;var txt=last.t+"\n\n";for(var i=0;i<last.v.length;i++)txt+=last.v[i][0]+"\n"+last.v[i][1]+"\n\n";txt+="معنی: "+last.m.join(" / ")+"\nتفسیر: "+last.f+FOOT;robustCopy(txt)}
+function copyBO(){var s=BO[cur];var txt=s.bab+" | "+s.t+"\n\n"+s.x.join("\n")+"\n\nمعنی دقیق: "+s.m+FOOT;robustCopy(txt)}
+function copyGO(i){var g=GO[i];robustCopy(g.t+"\n\n"+g.x+"\n\nمعنی دقیق: "+g.m+FOOT)}
+function copySG(i){var g=SG[i];var txt=g.t+"\n\n";for(var k=0;k<g.v.length;k++)txt+=g.v[k][0]+"\n"+g.v[k][1]+"\n\n";txt+="معنی دقیق: "+g.m+FOOT;robustCopy(txt)}
+document.addEventListener("copy",function(e){try{var s=window.getSelection().toString();if(s&&s.length>10&&s.indexOf("برگرفته از گنجینه")<0){e.clipboardData.setData("text/plain",s+FOOT);e.preventDefault()}}catch(_){}});
+function confetti(){var fx=document.getElementById("fx");for(var i=0;i<50;i++){var d=document.createElement("div");d.className="fp";d.style.left=(Math.random()*100)+"vw";var cols=["#e8b84b","#fff","#ff6b9d","#4ade80"];d.style.background=cols[i%4];fx.appendChild(d);(function(el){var y=-20;var t=setInterval(function(){y+=6;el.style.top=y+"px";el.style.transform="rotate("+(y*4)+"deg)";if(y>window.innerHeight){clearInterval(t);el.remove()}},20)})(d)}}
+function grid(){var s=document.getElementById("q").value.trim();var h="";for(var i=0;i<H.length;i++){var g=H[i];var okp=false;if(!s)okp=true;else{if(g.t.indexOf(s)>=0)okp=true;else{for(var j=0;j<g.v.length;j++)if(g.v[j][0].indexOf(s)>=0||g.v[j][1].indexOf(s)>=0){okp=true;break}}}if(okp)h+='<div class="it" onclick="openH('+g.id+')">'+g.t+'<small>غزل '+g.id+'</small></div>'}document.getElementById("grid").innerHTML=h||'<p style="opacity:.6">چیزی پیدا نشد</p>'}
+function openH(id){for(var i=0;i<H.length;i++)if(H[i].id==id){last=H[i];document.getElementById("hzOut").innerHTML='<div class="card">'+falHTML(H[i])+'</div>';document.getElementById("hzOut").scrollIntoView({behavior:"smooth"});break}}
+function setF(f){nast=(f=="n");document.getElementById("bNb").classList.toggle("on",nast);document.getElementById("bVb").classList.toggle("on",!nast);renderB()}
+function tglM(){showM=!showM;document.getElementById("bMb").textContent=showM?"معنی: روشن":"معنی: خاموش";document.getElementById("bMb").classList.toggle("on",showM);renderB()}
+function babFirst(){var seen=[],out=[];for(var i=0;i<BO.length;i++)if(seen.indexOf(BO[i].bab)<0){seen.push(BO[i].bab);out.push({b:BO[i].bab,i:i})}return out}
+function renderB(){var list=babFirst();var bh="";for(var k=0;k<list.length;k++)bh+='<button class="'+(BO[cur].bab==list[k].b?"on":"")+'" onclick="jumpB('+list[k].i+')">'+list[k].b+'</button>';document.getElementById("babBtns").innerHTML=bh;var s=BO[cur];document.getElementById("bTitle").textContent=s.bab+" | "+s.t;document.getElementById("bNum").textContent="صفحه "+(cur+1)+" از "+BO.length;var c=(nast?"nast":"vaz");var h='<div class="'+c+'" style="text-align:center;font-weight:700;font-size:22px;margin-bottom:10px">'+s.t+'</div>';for(var i=0;i<s.x.length;i++)h+='<div class="'+c+'" style="text-align:center">'+s.x[i]+'</div>';if(showM)h+='<div style="margin-top:12px;background:#3a270814;border:1px dashed #3a2708aa;border-radius:10px;padding:13px;font-family:Vazirmatn;font-size:14.5px;line-height:2">معنی دقیق: '+s.m+'</div>';h+='<div style="display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap"><button onclick="copyBO()" style="border:1px solid #3a2708;background:#3a2708;color:#f7e8bd;padding:10px 22px;border-radius:999px;font-family:Vazirmatn;cursor:pointer">کپی این صفحه</button></div>';document.getElementById("bBody").innerHTML=h}
+function flipGo(fn){var k=document.getElementById("kahiBox");k.classList.add("flip");setTimeout(function(){fn();renderB();k.classList.remove("flip")},300)}
+function jumpB(i){flipGo(function(){cur=i})}function bNext(){flipGo(function(){cur=(cur+1)%BO.length})}function bPrev(){flipGo(function(){cur=(cur-1+BO.length)%BO.length})}
+function golGrid(){var s=(document.getElementById("qg").value||"").trim();var h="";for(var i=0;i<GO.length;i++){var g=GO[i];if(!s||g.t.indexOf(s)>=0||g.x.indexOf(s)>=0)h+='<div class="it" onclick="openGIdx('+i+')">'+g.t+'<small>'+g.c+'</small></div>'}document.getElementById("golGrid").innerHTML=h||'<p style="opacity:.6">چیزی پیدا نشد</p>';var cats=[];for(var j=0;j<GO.length;j++)if(cats.indexOf(GO[j].c)<0)cats.push(GO[j].c);window._cats=cats;var bh="";for(var k=0;k<cats.length;k++)bh+='<button onclick="filterGol('+k+')">'+cats[k]+'</button>';document.getElementById("golBtns").innerHTML=bh}
+function filterGol(k){var c=window._cats[k];var h="";for(var i=0;i<GO.length;i++)if(GO[i].c==c)h+='<div class="it" onclick="openGIdx('+i+')">'+GO[i].t+'<small>'+GO[i].c+'</small></div>';document.getElementById("golGrid").innerHTML=h}
+function openGIdx(i){var g=GO[i];document.getElementById("golOut").innerHTML='<div class="card"><h3 style="font-family:Lalezar;color:#e8b84b;text-align:center">'+g.t+'</h3><p style="text-align:center;opacity:.7;font-size:13px">'+g.c+'</p><div style="font-family:Amiri;font-size:19px;line-height:2.3;margin:12px 0">'+g.x+'</div><div class="mean">'+g.m+'</div><div style="margin-top:10px"><button class="btn2" onclick="copyGO('+i+')">کپی</button></div></div>';document.getElementById("golOut").scrollIntoView({behavior:"smooth"})}
+function sgGrid(){var h="";for(var i=0;i<SG.length;i++)h+='<div class="it" onclick="openSG('+i+')">'+SG[i].t+'</div>';document.getElementById("sgGrid").innerHTML=h}
+function openSG(i){var g=SG[i];document.getElementById("sgOut").innerHTML='<div class="card"><h3 style="font-family:Lalezar;color:#e8b84b;text-align:center">'+g.t+'</h3>'+beyts(g.v)+'<div class="mean">معنی دقیق: '+g.m+'</div><div style="margin-top:10px"><button class="btn2" onclick="copySG('+i+')">کپی</button></div></div>';document.getElementById("sgOut").scrollIntoView({behavior:"smooth"})}
+grid();renderB();golGrid();sgGrid();
+document.getElementById("daily").textContent="بیت امروز: "+H[new Date().getDate()%H.length].v[0][0];
+</script>
+</body>
+</html>
